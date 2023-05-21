@@ -114,7 +114,7 @@ class BarangController extends Controller
                 $query = $query->orwhere('keterangan', 'like', $js_ecnd_session['keterangan']);
             }
             if($js_ecnd_session['stock']){
-                $query = $query->orwhere('qty', '>=', $js_ecnd_session['stock'])->where('qty', '>', 0);
+                $query = $query->orwhere('qty', $js_ecnd_session['stock']);
             }
             if($js_ecnd_session['order']){
                 $query = $query->orderby($js_ecnd_session['order'], 'asc');
